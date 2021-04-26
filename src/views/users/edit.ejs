@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../css/styless.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link  rel="icon"   href="../../../img/general/logotkcrojo.jpg" type="image/jpg" />
+    <title>Formulario de edición</title>
+</head>
+<body>
+  
+    <%- include ("../partials/header-superior.ejs") %>
+
+    <section class="section-formulario-edicion">
+        <div class="contenedor-formulario-edicion">
+            <div class="titulo-formulario-edicion">
+                <h2>Formulario de Edicion</h2>
+            </div>
+            
+            <div class="formulario-edicion">
+                <form action="/users/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                    <div>
+                        <label for="">Nombre:</label>
+                        <input type="text" name="nombre" id="" value="<%= user.nombre %>">
+                        <% if (locals.errors && errors.nombre) { %>
+                         <p class="formulario-register-error"><%= errors.nombre.msg %></p>
+                        <% } %>
+                    </div>
+                    <div>
+                        <label for="">Apellido:</label>
+                        <input type="text" name="apellido" id="" value="<%= user.apellido %>">
+                        <% if (locals.errors && errors.apellido) { %>
+                            <p class="formulario-register-error"><%= errors.apellido.msg %></p>
+                           <% } %>
+                    </div>
+                    <div>
+                        <label for="">Celular:</label>
+                        <input type="number" name="cel" id="" value= "<%= user.cel %>">
+                        <% if (locals.errors && errors.cel) { %>
+                            <p class="formulario-register-error"><%= errors.cel.msg %></p>
+                           <% } %>
+                    </div>
+                    <div>
+                        <label for="">Edad:</label>
+                        <input type="number" name="edad" id="" value= "<%= user.edad %>">
+                        <% if (locals.errors && errors.edad) { %>
+                            <p class="formulario-register-error"><%= errors.edad.msg %></p>
+                           <% } %>
+                    </div>
+                    <div>
+                        <label for="">E-mail:</label>
+                        <input type="email" name="email" id="" value="<%= user.email %>">
+                        <% if (locals.errors && errors.email) { %>
+                            <p class="formulario-register-error"><%= errors.email.msg %></p>
+                           <% } %>
+                    </div>
+                    <div>
+                        <label for="">Contraseña:</label>
+                        <input type="password" name="contraseña" id="" value="<%= user.contraseña %>">
+                        <% if (locals.errors && errors.contraseña) { %>
+                            <p class="formulario-register-error"><%= errors.contraseña.msg %></p>
+                           <% } %>
+                    </div>
+                    <div>
+                        <label for="image">Seleccione una imagen de perfil:  </label>
+                        <input type="file" name="image" id="image">
+                   </div>
+                    <div class="boton-create">
+                        <input type="submit" name="" id="" placeholder="Enviar">
+                    </div>
+                </form>
+    
+            </div>
+    
+        </div>
+    
+    </section>
+    
+    
+    
+    
+    <%- include ("../partials/footer.ejs") %>
+</body>
+</html>

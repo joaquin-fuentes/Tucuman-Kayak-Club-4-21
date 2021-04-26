@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../css/styless.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link  rel="icon"   href="../../../img/general/logotkcrojo.jpg" type="image/jpg" />
+    <title>Contacto</title>
+</head>
+<body>
+  
+    <%- include ("../partials/header-superior.ejs") %>
+
+
+    <section class="section-contacto">
+        <div class="titulo">
+            <h2>Contacto</h2>
+
+        </div>
+        <div class="contacto-inferior">
+            <div class="direccion">
+                <div class="parrafos">
+                    <p>El Cadillal - Tucuman - Argentina</p>
+                    <p>Al lado del "Bar La Isla" en la zona de playa podes encontrar la carpa roja de TKC</p>
+                    <i class="fab fa-whatsapp"></i><p>3816097754</p>
+                    <i class="far fa-envelope"></i><p>joaquin_eas@hotmail.com</p>
+                </div>
+            </div>
+            <div class="contacto">
+                <div class="contenedor-formulario">
+                    <form action="">
+                        <div class="nombre-telefono">
+                            <div class="nombre">
+                               <input type="text" name="nombre" id="" placeholder="Nombre">
+                            </div>
+                            <div class="telefono">
+                                <input type="number" name="cel" id="" placeholder="Teléfono">
+                            </div>
+                        </div>
+                        <div class="mail">
+                            <input type="email" name="mail" id="" placeholder="Direccion de correo electrónico">
+                        </div>
+                        <div class="mensaje">
+                            <textarea name="mensaje" id="" cols="30" rows="10" placeholder="Mensaje"></textarea>
+                        </div>
+                        <div class="boton-enviar">
+                            <input type="submit" name="" id="">
+                        </div>
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    
+    <%- include ("../partials/footer.ejs") %>
+</body>
+</html>
