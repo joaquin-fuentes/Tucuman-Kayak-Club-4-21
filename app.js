@@ -32,7 +32,7 @@ app.use("/",mainRoutes)
 app.use("/users",usersRoutes)
 
 // Iniciamos el servidor
-app.listen(3000,()=>{
+app.listen(process.env.PORT || 3000,()=>{
     console.log("servidor corriendo en puerto 3000")
 })
 
