@@ -282,6 +282,12 @@ ul li .iconos-nav-header {
     color: white;
     text-shadow: 2px 2px 5px black;
 }
+
+.contenedor-frase-boton p{
+    font-size: 18px;
+    color: white;
+    text-shadow: 2px 2px 5px black;
+}
 .contenedor-frase-boton a{
     margin: 2%;
     font-size: 30px;
@@ -1501,6 +1507,9 @@ span{
  .contenedor-frase-boton a{
     font-size: 20px;
  }
+ .contenedor-frase-boton p{
+    font-size: 14px;
+}
 /*Section contacto*/
 .parrafos p{
     width: 95%;
