@@ -33,7 +33,7 @@ header:before {
 }
 .header-superior{
     width: 100%;
-    height: 11%;
+    height: 7vh;
     display: flex;
     justify-content: space-between;
     background-color: rgba(0, 0, 0, 0.9);
@@ -43,27 +43,55 @@ header:before {
 }
 .header-superior .logo {
     width: 8%;
+    height: 7vh;
 }
-.logo{
+.header-user{
+    width: 50%;
+    height:100%;
     display: flex;
     align-items: center;
-    justify-content: center;
     color: white;
     border: white;
+    justify-content: start;
 }
-.img-logo{
-    margin-left: 4%;
+.header-user p{
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    margin-left: 3%;
+}
+.header-user a{
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    margin-left: 3%;
+}
+.header-user a:hover{
+    text-decoration: underline;
+    text-shadow: 3px 3px 6px black;
+}
+.header-user img{
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    
+}
+.img-header-user{
+    width: 5%;
     border: white;
     border-radius: 100%;
+    margin-left: 3%;
 }
-.img-logo img{
-    width: 40%;
-    height: 40%;
+.img-header-logo{
+    width: 5%;
+    border: white;
     border-radius: 100%;
-    margin-left: 30%;
+    margin-left: 3%;
 }
+
 .header-superior nav{
-    width: 92%;
+    width: 50%;
+    height: 100%;
 }
 .header-superior nav ul {
     display: flex;
@@ -172,7 +200,7 @@ ul li .iconos-nav-header {
 }
 .contenedor-actividades{
     width: 100%;
-    height: 85vh;
+    height: 85%;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -541,7 +569,7 @@ span{
     margin-top: 3%;
 }
 .contenido-quienes-somos{
-    width: 70%;
+    width: 90%;
     height: 95%;
     display: flex;
     flex-direction: column;
@@ -754,7 +782,7 @@ span{
     position: relative;
 }
 .contenedor-formulario-registro{
-    width: 40%;
+    width: 45%;
     height: 80%;
     display: flex;
     align-items: center;
@@ -812,15 +840,15 @@ span{
     margin-bottom: 1%;
 }
 .formulario-registro form div label{
-    width: 24%;
+    width: 30%;
     height: 80%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: 600;
+    font-weight: 550;
 }
 .formulario-registro form div input{
-    width: 76%;
+    width: 70%;
     height: 80%;
     border-radius: 5px;
 }
@@ -1043,3 +1071,495 @@ span{
     height: 80%;
     border-radius: 5px;
 }
+
+/* Section detalle de usuario*/
+
+.detalle-usuario{
+    width: 100%;
+    height: 100%;
+    margin-top: 3%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.contenedor-usuario{
+    width: 80%;
+    height: 80%;
+    background-color: rgba(165, 3, 3, 0.95);
+    color: white;
+    border: black 2px solid;
+    margin-bottom: 5%;
+    border-radius: 15px;
+    box-shadow: 2px 2px 5px black;
+}
+.contenedor-img-info{
+    display: flex;
+    height: 100%;
+    margin-top: 2%;
+    width: 100%;
+}
+.negrita{
+    font-weight: 900;
+    font-size: 18px;
+}
+span{
+    margin-bottom: 5%;
+}
+.contenedor-img-info .img-usuario{
+    width: 30%;
+    margin: 1%;
+    height: 250px;
+    border: black 1px solid;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 2px 2px 5px black;
+}
+.info-usuario{
+    width: 70%;
+    height: 200%;
+    margin: 1%;
+}
+.contenedor-img-info .img-usuario img{
+    width: 100%;
+    height: 100%;
+}
+
+.enlaces-detalle-usuario{
+    width: 50%;
+    height: 100%;
+    margin: 5% 0%;
+    display: flex;
+    justify-content: space-around;
+}
+.boton-detalle-usuario-borrar{
+    border-radius: 15%;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    margin-left: 5%;
+}
+.boton-detalle-usuario-borrar:hover{
+    background-color: rgb(194, 192, 192);
+    box-shadow: 2px 2px 5px black;
+}
+
+
+
+@media (max-width: 767px){
+    .header-superior{
+        
+        font-size: 12px;
+    }
+    .contenedor-frases{
+        width: 95%;
+    }
+    /*actividades max width 767*/
+    .section-actividades{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    border-top: black 1px solid;
+    }
+    .contenedor-actividades{
+    width: 100%;
+    display: flex;;
+    align-items: center;
+    flex-direction: column;
+    }
+     .tarjeta-actividad{
+    width: 90%;
+    margin: 2% 0%;
+    }
+    .titulo{
+        width: 100%;
+        height:10% ;
+        margin-top: 5%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+/*seccion registrate y forma parte*/
+.section-registrate-forma-parte{
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: black 1px solid;
+    background-image: url(../img/general/\(18\).jpg);
+    background-position: center;
+	background-attachment: contain;
+	background-size: cover;
+    position: relative;
+}
+.section-registrate-forma-parte:before {
+	content:'';
+	position: absolute;
+        top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0, 0, 0, 0.3);
+}
+.contenedor-frase-boton{
+    width: 70%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    text-align: center;
+}
+/*Section contacto*/
+.section-contacto{
+    height: 100%;
+}
+.contacto-inferior{
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+}
+.direccion{
+    margin-top: 3%;
+    width: 100%;
+    height: 100%;
+}
+.parrafos{
+    width: 95%;
+    height: 90%;
+    justify-content: center;
+    align-items: center;
+}
+.parrafos p{
+    width: 90%;
+    text-align: center;
+}
+.contacto{
+    margin-top: 7%;
+    margin-bottom: 6%;
+    width: 100%;
+    height: 100%;
+}
+/*Quienes somos*/
+.quienes-somos{
+    width: 100%;
+    height: 100%;
+    margin-bottom: 5%;
+}
+.imagen-quienes-somos{
+    margin: 2% 0%;
+}
+/*Vista alquiler*/
+.section-alquiler-vista{
+    width: 100%;
+    height: 100%;
+}
+.contenedor-alquiler-vista{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.contenedor-img-alquiler-vista{
+    width: 70%;
+}
+.contenedor-info-alquiler-vista{
+    width: 80%;  
+}
+/*excursiones*/
+.contenedor-img-info{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin-top: 2%;
+    width: 100%;
+}
+.contenedor-img-info .foto-excursion{
+    width: 95%;
+    margin: 2%;
+    height:40vh;
+    border: black 1px solid;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 2px 2px 5px black;
+}
+.info-excursion{
+    width: 100%;
+    height: 200%;
+    margin: 1%;
+}
+.contenedor-img-info .foto-excursion img{
+    width: 100%;
+    height: 100%;
+}
+/*Actividades que ofrecemos*/
+.section-actividades-vista{
+    width: 100%;
+    height: 100%;
+}
+.contenedor-actividades-vista{
+    width: 100%;
+    display: flex;;
+    align-items: center;
+    flex-direction: column;
+}
+.tarjeta-actividad-vista{
+    width: 90%;
+    margin: 2% 0%;
+}
+/*Vista coaching*/
+.section-coaching-vista{
+    width: 100%;
+    height: 100%;
+}
+.contenedor-coaching-vista{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.contenedor-img-coaching-vista{
+    width: 70%;
+}
+.contenedor-info-coaching-vista{
+    width: 80%;  
+}
+/*Vista escuelita*/
+.section-escuelita-vista{
+    width: 100%;
+    height: 100%;
+}
+.contenedor-escuelita-vista{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.contenedor-img-escuelita-vista{
+    width: 70%;
+}
+.contenedor-info-escuelita-vista{
+    width: 80%;  
+}
+
+/*Formulario Registro*/
+.section-formulario-registro{
+    height: 100vh;
+}
+.contenedor-formulario-registro{
+    width: 85%;
+    height: 70%;
+}
+.titulo-formulario-registro{
+    width: 100%;
+    height: 12%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2%;
+}
+.frase-superior-formulario-registro{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.frase-superior-formulario-registro a{
+    color: white;
+    margin-left: 1%;
+}
+.frase-superior-formulario-registro a:hover{
+    color: yellow;
+}
+.formulario-registro{
+    width: 100%;
+    height: 80%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin: 2%;
+}
+.formulario-registro form{
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.formulario-registro form div{
+    width: 80%;
+    height: 12%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1%;
+}
+.formulario-registro form div label{
+    width: 30%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 550;
+}
+.formulario-registro form div input{
+    width: 70%;
+    height: 80%;
+    border-radius: 5px;
+}
+.boton-create input{
+    margin-top: 7%;
+    border-radius: 5px;
+}
+.boton-create input:hover{
+    box-shadow: 3px 3px 6px black;
+    border: black;
+    background-color: rgb(216, 215, 215);
+}
+.formulario-register-error{
+    font-size: 8px;
+}
+/* Section detalle de usuario*/
+.contenedor-usuario{
+    width: 90%;
+    height: 80%;
+}
+.contenedor-img-info{
+    display: flex;
+    height: 100%;
+    margin-top: 2%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.contenedor-img-info .img-usuario{
+    width: 80%;
+    margin: 1%;
+    height: 40vh;
+}
+.info-usuario{
+    width: 80%;
+    height: 100%;
+    margin: 1%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+/*Formulario edicion*/
+.section-formulario-edicion{
+    width: 100%;
+    height: 100%;
+}
+.contenedor-formulario-edicion{
+    width: 85%;
+    height: 70%;
+    margin: 6% 0%;
+}
+/*Listado de usuarios*/
+.tarjeta-usuario{
+    width: 80%;
+    height: 22vh;
+}
+}
+
+@media (max-width: 480px){
+    .header-superior{   
+        font-size: 10px;
+    }
+    .header-superior nav{
+        font-size: 8px;
+    }
+    .contenedor-frases h2{
+       font-size: 30px;
+    }
+    .contenedor-frases h3{
+        font-size: 20px;
+     }
+     .contenedor-frases h1{
+        font-size: 40px;
+     }
+    /*actividades max width 767*/
+    .titulo{
+        width: 100%;
+        height:10% ;
+        margin-top: 5%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    } 
+/*seccion registrate y forma parte*/
+.contenedor-frase-boton h2{
+    font-size: 30px;
+ }
+ .contenedor-frase-boton a{
+    font-size: 20px;
+ }
+/*Section contacto*/
+.parrafos p{
+    width: 95%;
+    font-size: 20px;
+    text-align: center;
+}
+/*footer */
+footer{
+    font-size: 12px;
+    justify-content: center;
+}
+/*Formulario Registro*/
+.contenedor-formulario-registro{
+    width: 95%;
+    height: 70%;
+}
+.titulo-formulario-registro{
+    text-align: center;
+}
+.frase-superior-formulario-registro{
+    text-align: center;
+}
+.formulario-registro form div{
+    width: 99%;
+}
+.formulario-registro form div label{
+    width: 34%;
+   
+}
+.formulario-registro form div input{
+    width: 66%;
+}
+/* Section detalle de usuario*/
+
+/*Formulario edicion*/
+.section-formulario-edicion{
+    height: 100vh;
+}
+.formulario-edicion form div{
+    width: 99%;
+}
+.formulario-edicion form div label{
+    width: 34%;
+}
+.formulario-edicion form div input{
+    width: 66%;
+}
+.contenedor-formulario-edicion{
+    width: 98%;
+}
+/*Listado de usuarios*/
+.tarjeta-usuario{
+    width: 98%;
+    height: 24vh;
+}
+}
+
+
+
+
+
+

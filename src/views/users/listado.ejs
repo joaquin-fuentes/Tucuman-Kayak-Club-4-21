@@ -42,6 +42,9 @@
                     <form class="tarjeta-link" action="/users/<%= user.id %>/edit" method="GET">
                         <button class="boton-borrar">Editar</button>
                     </form>
+                    <form class="tarjeta-link" action="/users/<%= user.id %>" method="GET">
+                        <button class="boton-borrar">Ver Detalle</button>
+                    </form>
                     <form class="tarjeta-link" action="/users/<%= user.id %>?_method=delete" method="POST">
                         <button class="boton-borrar">Borrar</button>
                     </form>

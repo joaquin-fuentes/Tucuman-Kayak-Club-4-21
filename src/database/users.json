@@ -19,45 +19,5 @@
   "Enviar": "Enviar",
   "id": 3,
   "image": "user-1619297367900.jpg"
- },
- {
-  "nombre": "Ragnar",
-  "apellido": "Lothbrok",
-  "cel": "382787653",
-  "edad": "40",
-  "email": "ragnar@hotmail.com",
-  "contraseña": "3478338373",
-  "Enviar": "Enviar",
-  "id": 4,
-  "image": "user-1619297422605.jpg"
- },
- {
-  "nombre": "Chango",
-  "apellido": "Fachero",
-  "cel": "38765794",
-  "edad": "30",
-  "email": "facha@hotmail.com",
-  "contraseña": "joackobj9393",
-  "Enviar": "Enviar",
-  "id": 5,
-  "image": "user-1619297465051.jpg"
- },
- {
-  "nombre": "nuevo",
-  "apellido": "usuario",
-  "cel": "384738473",
-  "edad": "28",
-  "email": "nuevo@hotmail.com",
-  "contraseña": "ahsdash2232",
-  "id": 6
- },
- {
-  "nombre": "joaquin",
-  "apellido": "fuentes",
-  "cel": "3816097754",
-  "edad": "27",
-  "email": "joaquin_eas@hotmail.com",
-  "contraseña": "$2a$10$OzgCvYyq780AKDYeyAsaAurT38Udf.xTdTMoZE3TPfmLrNseSOIv6",
-  "id": 7
  }
 ]

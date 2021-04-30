@@ -89,7 +89,7 @@ module.exports = {
 
             let userId = usersTable.create(user);
 
-            res.redirect('/users/');
+            res.redirect('/users/' + userId);
         // Si hay errores
         } else {
             // Renderizo el formulario nuevamente con los errors y los datos completados
@@ -125,7 +125,7 @@ module.exports = {
 
         let userId = usersTable.update(user);
 
-        res.redirect('/users/' );
+        res.redirect('/users/' + userId );
     },
     destroy: (req, res) => {
         let users = usersTable.all()

@@ -10,7 +10,6 @@ const mainRoutes = require("./src/routes/mainRoutes")
 const usersRoutes = require("./src/routes/usersRoutes")
 
 
-
 // Configuración
 app.use(express.static("public")) 
 app.set("view engine", "ejs")

@@ -14,7 +14,38 @@
   
     <%- include ("../partials/header-superior.ejs") %>
 
-<h1>Vista de DETALLE DE USUARIO </h1>
+
+<div class="titulo"> 
+        <h1>Detalle del usuario <%= user.nombre %> <%= user.apellido %></h1>
+</div>
+    
+<section class="detalle-usuario">
+    <section class="contenedor-usuario">
+        <div class="contenedor-img-info">
+             <div class="img-usuario">
+                <img src="../../../img/users/<%= user.image ? user.image : 'default.jpg' %>" alt="">
+             </div>
+            <div class="info-usuario">
+                <div class="contenedor-info-usuario">
+                    <span class="negrita">Nombre: </span><span> <%= user.nombre %></span><br>
+                    <span class="negrita">Apellido: </span><span><%= user.apellido %></span><br>
+                    <span class="negrita">E-mail: </span><span>  <%= user.email %><span><br>
+                    <span class="negrita">Edad: </span><span> <%= user.edad %></span><br>
+                    <span class="negrita">Número de celular: </span><span> <%= user.cel %></span><br>
+                    <span class="negrita">Número para participar de sorteos: </span><span> <%= user.id %></span>
+                </div>
+                <div class="enlaces-detalle-usuario">
+                    <form class="tarjeta-link" action="/users/<%= user.id %>/edit" method="GET">
+                        <button class="boton-detalle-usuario-borrar">Editar</button>
+                    </form>
+                    <form class="tarjeta-link" action="/users/<%= user.id %>?_method=delete" method="POST">
+                        <button class="boton-detalle-usuario-borrar">Borrar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
     
     <%- include ("../partials/footer.ejs") %>
 </body>
