@@ -25,16 +25,20 @@
                 <a href=""> Ingresá aquí</a>
             </div>
             <div class="formulario-login">
-                <form action="" method="" enctype="">
+                <form action="/users/login" method="POST">
                     <div>
                         <label for="">E-mail:</label>
                         <input type="email" name="email" id="" placeholder="">
-                        
+                        <% if (locals.errors && errors.email) { %>
+                            <p class="formulario-register-error"><%= errors.email.msg %></p>
+                        <% } %>
                     </div>
                     <div>
                         <label for="">Contraseña:</label>
                         <input type="password" name="contraseña" id="" placeholder=" ">
-                       
+                        <% if (locals.errors && errors.contraseña) { %>
+                            <p class="formulario-register-error"><%= errors.contraseña.msg %></p>
+                        <% } %>
                     </div>
                     <div class="boton-create">
                         <input type="submit" name="Ingresar" id="" placeholder="Ingresar">

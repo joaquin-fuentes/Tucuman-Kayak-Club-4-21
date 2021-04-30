@@ -17,9 +17,13 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage });
 
-router.get("/login" , controller.login)
+
 router.get('/', controller.listado);
+router.get("/login" , controller.login)
+router.post('/login', validate.login, controller.authenticate);
+router.get('/logout', controller.logout);
 router.get('/create', controller.create); // Muestra formulario de creación
+router.get('/:id', controller.show);
 router.post('/', upload.single('image'), validate.register, controller.store); // Procesa el formulario de creación
 router.get('/:id/edit', controller.edit);
 router.put('/:id', upload.single('image'), validate.update, controller.update);

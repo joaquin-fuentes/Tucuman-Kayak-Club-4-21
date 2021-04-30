@@ -10,17 +10,6 @@
   "image": "user-1619297093736.jpg"
  },
  {
-  "nombre": "Joaquin",
-  "apellido": "Fuentes",
-  "cel": "3816097754",
-  "edad": "27",
-  "email": "joaquin@hotmail.com",
-  "contraseña": "joackobj10",
-  "Enviar": "Enviar",
-  "id": 2,
-  "image": "user-1619297118647.jpg"
- },
- {
   "nombre": "Cristiano",
   "apellido": "Ronaldo",
   "cel": "382742833",
@@ -61,5 +50,14 @@
   "email": "nuevo@hotmail.com",
   "contraseña": "ahsdash2232",
   "id": 6
+ },
+ {
+  "nombre": "joaquin",
+  "apellido": "fuentes",
+  "cel": "3816097754",
+  "edad": "27",
+  "email": "joaquin_eas@hotmail.com",
+  "contraseña": "$2a$10$OzgCvYyq780AKDYeyAsaAurT38Udf.xTdTMoZE3TPfmLrNseSOIv6",
+  "id": 7
  }
 ]
