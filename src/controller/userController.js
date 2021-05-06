@@ -5,7 +5,8 @@ const jsonTable = require('../database/jsonTable');
 const usersTable = jsonTable('users');
 const { validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
-
+const User = require('../../database/models')
+const db = require ("../../database/models")
 
 module.exports = {
     login: (req,res) =>{
@@ -64,11 +65,11 @@ module.exports = {
         res.redirect('/');
     },
     listado: (req, res) => {
-        let users = usersTable.all()
-
-        res.render('users/listado', {  
-            users       
-        });
+        db.User.findAll()
+            .then(users => {
+                res.render('users/listado', { users: users })
+            })
+            .catch(err => console.log(err));
     },
     create: (req, res) => {
         res.render('users/create');
