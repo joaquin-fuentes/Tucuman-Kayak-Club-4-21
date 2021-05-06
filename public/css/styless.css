@@ -890,7 +890,7 @@ span{
     display: flex;
     border: black 1px solid;
     border-radius: 15px;
-    background-color: rgb(1, 70, 116);
+    background-color: rgba(165, 3, 3, 0.95);
     color: white;
     overflow: hidden;
 }
