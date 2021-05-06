@@ -1520,6 +1520,7 @@ span{
 footer{
     font-size: 12px;
     justify-content: center;
+    height: 25vh;
 }
 /*Formulario Registro*/
 .contenedor-formulario-registro{
