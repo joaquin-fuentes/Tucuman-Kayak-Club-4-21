@@ -548,7 +548,7 @@ span{
     margin: 1%;
     height: 250px;
     border: black 1px solid;
-    border-radius: 4px;
+    border-radius: 12px;
     overflow: hidden;
     box-shadow: 2px 2px 5px black;
 }
