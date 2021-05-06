@@ -61,6 +61,10 @@
                        <% } %>
                 </div>
                 <div>
+                    <label for="image">Seleccione una imagen de perfil:  </label>
+                    <input type="file" name="image" id="image">
+               </div>
+                <div>
                     <label for="">Contraseña:</label>
                     <input type="password" name="contraseña" id="" placeholder="<%= locals.old && old.contraseña ? old.contraseña : '' %>">
                     <% if (locals.errors && errors.contraseña) { %>

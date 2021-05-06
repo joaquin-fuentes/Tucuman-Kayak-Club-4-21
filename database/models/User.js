@@ -36,6 +36,9 @@ module.exports = (sequelize, dataTypes) => {
         edad: {
             type: dataTypes.INTEGER
         },
+        image: {
+            type: dataTypes.STRING
+        },
     }, {
         tableName: 'users',
         timestamps: false

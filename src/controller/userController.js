@@ -1,8 +1,6 @@
 
 const fs = require('fs');
 const path = require('path');
-const jsonTable = require('../database/jsonTable');
-const usersTable = jsonTable('users');
 const { validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
 const User = require('../../database/models')
@@ -21,43 +19,48 @@ module.exports = {
         // Si no hay errores
         if (errors.isEmpty()) {
             // Verifico que el usuario exista
-            let user = usersTable.findByField('email', req.body.email);
-
+            db.User.findOne({
+                where:{
+                    email: req.body.email
+                }
+            })
             // Si el usuario existe
-            if (user) {
-                // La contraseña es la correcta
-                if (bcrypt.compareSync(req.body.contraseña, user.contraseña)) {
-                    req.session.user = user;
-
-                    return res.redirect('/users/' + user.id)
-
-                // Si la contraseña es incorrecta
-                } else {
+             .then(user =>{
+                 if(user){
+                     // La contraseña es la correcta
+                     if(bcrypt.compareSync(req.body.contraseña, user.contraseña)){
+                        req.session.user = user
+                         return res.redirect("/")
+                     } // Si la contraseña es incorrecta
+                     else {
+                        let errors = {
+                            contraseña: {
+                                msg: 'La contraseña es incorrecta',
+                                param: 'email',
+                                location: 'body'
+                            }
+                        }
+                        return res.render('users/login', { errors: errors, old: req.body });
+                    }
+                 }             // Si el usuario no existe
+                 else {
                     let errors = {
-                        contraseña: {
-                            msg: 'La contraseña es incorrecta',
+                        email: {
+                            msg: 'El email no existe en nuestros registros',
                             param: 'email',
                             location: 'body'
                         }
                     }
                     return res.render('users/login', { errors: errors, old: req.body });
                 }
-            // Si el usuario no existe
-            } else {
-                let errors = {
-                    email: {
-                        msg: 'El email no existe en nuestros registros',
-                        param: 'email',
-                        location: 'body'
-                    }
+             })
                 }
-                return res.render('users/login', { errors: errors, old: req.body });
-            }
-        // Si hay errores
-        } else {
-            // Renderizo el formulario nuevamente con los errors y los datos completados
-            return res.render('users/login', { errors: errors.mapped(), old: req.body });
-        }
+                // Si hay errores
+                 else {
+                    // Renderizo el formulario nuevamente con los errors y los datos completados
+                    return res.render('users/login', { errors: errors.mapped(), old: req.body });
+                }
+
 
     },
     logout: (req, res) => {
@@ -81,16 +84,21 @@ module.exports = {
         // Me fijo si no hay errores
         if (errors.isEmpty()) {
             // Genero el nuevo usuario
-            let user = req.body;
-            user.contraseña = bcrypt.hashSync(user.contraseña);
-
-            if (req.file) {
-                user.image = req.file.filename;
-            }
-
-            let userId = usersTable.create(user);
-
-            res.redirect('/users/' + userId);
+            const { file } =  req
+            const { nombre, apellido,email,edad,cel,contraseña} =  req.body
+            db.User.create({
+                nombre,
+                apellido, 
+                email,
+                edad,
+                cel,
+                contraseña: bcrypt.hashSync(contraseña),
+                image: file.filename,
+            })
+                .then(users => {
+                    let userId = users.id
+                    res.redirect('/users/' + userId );
+                })
         // Si hay errores
         } else {
             // Renderizo el formulario nuevamente con los errors y los datos completados
@@ -98,41 +106,55 @@ module.exports = {
         }
     },
     show: (req, res) => {
-        let user = usersTable.find(req.params.id);
+        db.User.findByPk (req.params.id )
+            .then( user  =>  res.render('users/detail', { user }) )
 
-        if ( user ) {
-            res.render('users/detail', { user });
-        } else {
-            res.send('No encontré el usuario');
-        }
+        
     },
     edit: (req, res) => {
-        let user = usersTable.find(req.params.id);
+       db.User.findOne({
+           where: {id: req.params.id}
+       })
+          .then(user =>{
+            res.render('users/edit', { user });
+          })
 
-        res.render('users/edit', { user });
+      
     },
     update: (req, res) => {
-        let user = req.body;
-        user.id = Number(req.params.id);
+        const { file } =  req
+        const { nombre, apellido,email,edad,cel,contraseña} =  req.body
+        db.User.findOne({ 
+            where: { id: req.params.id },
+        })
+            .then((user) => {
+                user.update({
+                    nombre,
+                    apellido,
+                    email,
+                    edad,
+                    cel,
+                    contraseña,
+                    image: file? file.filename : user.image,
+                })
+                    .then((users) => {
+                        let userId = users.id
+                        res.redirect('/users/' + userId );
+                    })
+            })
 
-        // Si viene una imagen nueva la guardo
-        if (req.file) {
-            user.image = req.file.filename;
-        // Si no viene una imagen nueva, busco en base la que ya había
-        } else {
-            oldUser = usersTable.find(user.id);
-            user.image = oldUser.image;
-        }
+       
 
-        let userId = usersTable.update(user);
-
-        res.redirect('/users/' + userId );
     },
     destroy: (req, res) => {
-        let users = usersTable.all()
-
-        usersTable.delete(req.params.id);
-
-        res.redirect('/users');
+        db.User.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+            .then(() => {
+                res.redirect('/users')
+            })
+        
     }
 }
