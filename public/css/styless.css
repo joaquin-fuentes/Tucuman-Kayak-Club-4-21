@@ -36,10 +36,11 @@ header:before {
     height: 7vh;
     display: flex;
     justify-content: space-between;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.5);
     box-shadow: 2px 2px 5px black;
     overflow: hidden;
-    position: relative;
+    position: fixed;
+    z-index: 10;
 }
 .header-superior .logo {
     width: 8%;
