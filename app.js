@@ -4,6 +4,7 @@ const app = express()
 const methodOverride = require('method-override');
 const session = require('express-session');
 const auth = require('./src/middlewares/auth');
+const cors = require ("cors")
 
 // Rutas
 const mainRoutes = require("./src/routes/mainRoutes")
@@ -15,6 +16,9 @@ const apiRouter = require('./src/routes/apiRoutes')
 app.use(express.static("public")) 
 app.set("view engine", "ejs")
 app.set("views", "src/views")
+
+//middlewares
+app.use(cors())
 
 // Sessiones y cookies
 app.use(session({
