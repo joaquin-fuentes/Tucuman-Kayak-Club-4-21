@@ -8,6 +8,7 @@ const auth = require('./src/middlewares/auth');
 // Rutas
 const mainRoutes = require("./src/routes/mainRoutes")
 const usersRoutes = require("./src/routes/usersRoutes")
+const apiRouter = require('./src/routes/apiRoutes')
 
 
 // Configuración
@@ -30,6 +31,7 @@ app.use(methodOverride('_method'));
 
 app.use("/",mainRoutes)
 app.use("/users",usersRoutes)
+app.use('/api', apiRouter);
 
 // Iniciamos el servidor
 app.listen(process.env.PORT || 3000,()=>{
