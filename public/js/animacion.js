@@ -1,6 +1,6 @@
 let animado = document.querySelectorAll(".animado")
-let animadoHeaderIzquierda = document.querySelector(".animadoHeaderIzquierda")
-let animadoHeaderDerecha = document.querySelector(".animadoHeaderDerecha")
+let animadoHeaderIzquierda = document.querySelectorAll(".animadoHeaderIzquierda")
+let animadoHeaderDerecha = document.querySelectorAll(".animadoHeaderDerecha")
 let animadoFijo = document.querySelectorAll(".animadoFijo")
 
 function mostrarScroll(){
@@ -21,14 +21,18 @@ function mostrarHeader(){
 }
 
 function mostrarHeaderh1(){
-        if(animadoHeaderIzquierda){
-            animadoHeaderIzquierda.style.opacity= 1
+    for(let i = 0; i < animadoHeaderIzquierda.length; i++){
+        if(animadoHeaderIzquierda[i]){
+            animadoHeaderIzquierda[i].style.opacity= 1
         }
+    }
 }
 function mostrarHeaderh2(){
-        if(animadoHeaderDerecha){
-            animadoHeaderDerecha.style.opacity= 1
+    for(let i = 0; i < animadoHeaderDerecha.length; i++){
+        if(animadoHeaderDerecha[i]){
+            animadoHeaderDerecha[i].style.opacity= 1
         }
+    }
 }
 
 window.addEventListener("scroll", mostrarScroll)
