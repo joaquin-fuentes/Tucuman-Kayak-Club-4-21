@@ -15,12 +15,12 @@
     <%- include ("../partials/header-superior.ejs") %>
 
 
-<div class="titulo"> 
+<div class="titulo animadoFijo"> 
         <h1>Detalle del usuario <%= user.nombre %> <%= user.apellido %></h1>
 </div>
     
 <section class="detalle-usuario">
-    <section class="contenedor-usuario">
+    <section class="contenedor-usuario animadoFijo">
         <div class="contenedor-img-info">
              <div class="img-usuario">
                 <img src="../../../img/users/<%= user.image ? user.image : 'default.jpg' %>" alt="">

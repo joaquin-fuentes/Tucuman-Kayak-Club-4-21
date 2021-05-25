@@ -14,12 +14,12 @@
     <%- include ("../partials/header-superior.ejs") %>
 
 <section class="section-listado-usuarios">
-    <div class="titulo">
+    <div class="titulo animadoFijo">
        <h1>Listado de Usuarios</h1>
     </div>
-    <div class="contenedor-tarjeta-usuario">
+    <div class="contenedor-tarjeta-usuario animadoFijo">
         <% users.forEach(user => { %>
-        <div class="tarjeta-usuario">
+        <div class="tarjeta-usuario ">
             <div class="conenedor-foto-usuario">
                 <div class="foto-usuario">
                     <img src="../../../img/users/<%= user.image ? user.image : 'default.jpg' %>" alt="">

@@ -7,6 +7,44 @@ body{
     width: 100%;
 }
 
+/* Animacion JS */
+
+.animado{
+    opacity: 0;
+    transition: all 1s;
+}
+.animadoFijo{
+    opacity: 0;
+    transition: all 1s;
+}
+.animadoHeaderIzquierda{
+    opacity: 0;
+    transition: all 2s;
+    animation: mostrarIzquierda 3s;
+}
+.animadoHeaderDerecha{
+    opacity: 0;
+    transition: all 2s;
+    animation: mostrarDerecha 3s;
+}
+
+ @keyframes mostrarIzquierda{
+  0%{
+      transform: translateX(-100vw);
+  }
+  100%{
+    transform: translateX(0vw);
+}
+    }
+ @keyframes mostrarDerecha{
+    from{
+        margin-left: 100vw;
+      }
+      to {
+         margin-left: 0;
+      }
+    }
+
 /*Header*/
 
 /*header superior*/
